@@ -1,4 +1,6 @@
 class Clock(object):
+    """A clock is initialized to a specific time and can have minutes added or subtracted."""
+    
     def __init__(self, hour, minute):
         # roll over hours if greater than 23
         while hour > 23:
@@ -68,6 +70,7 @@ class Clock(object):
         return self
         
     def __eq__(self, other):
+        """Two clocks set to the same time are equal."""
         if self.hour == other.hour and self.minute == other.minute:
             return True
         else:
