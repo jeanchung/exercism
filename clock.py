@@ -23,7 +23,4 @@ class Clock(object):
         self.minute = self.minute % 60         
         
     def __eq__(self, other):
-        if self.hour == other.hour and self.minute == other.minute:
-            return True
-        else:
-            return False
+        return self.hour == other.hour and self.minute == other.minute
