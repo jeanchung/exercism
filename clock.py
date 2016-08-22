@@ -18,9 +18,8 @@ class Clock(object):
         return self
     
     def rollover(self):
-        self.hour += divmod(self.minute, 60)[0]
-        self.hour = self.hour % 24
-        self.minute = self.minute % 60         
+        hour_temp, self.minute = divmod(self.minute, 60)
+        self.hour = (self.hour + hour_temp) % 24 
         
     def __eq__(self, other):
         return self.hour == other.hour and self.minute == other.minute
