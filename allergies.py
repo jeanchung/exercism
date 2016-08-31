@@ -20,7 +20,7 @@ class Allergies(object):
     """
     
     def __init__(self, score):
-        self.score = score
+        self.score = score % 256
         self.calculate_allergies()
         self.lst = [x for x in self.allergy_report.keys() if self.allergy_report[x]]
     
